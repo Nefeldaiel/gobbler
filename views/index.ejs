@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Restaurants - List</h1>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Avg. Price</th>
+        <th>Cuisine Type</th>
+        <th>Score</th>
+      </tr>
+      <% for (var i=0; i<data.length; i++) { %>
+        <tr>
+          <td><%= data[i].ipeen_restaurant_id %></td>
+          <td><%= data[i].restaurant_name %></td>
+          <td><%= data[i].phone_number %></td>
+          <td><%= data[i].average_price %></td>
+          <td><%= data[i].cuisine_style %></td>
+          <td><%= data[i].average_score %></td>
+        </tr>
+      <% } %>
+    </table>
+  </body>
+</html>
