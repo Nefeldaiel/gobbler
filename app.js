@@ -21,13 +21,19 @@ var con = mysql.createConnection({
   password: config.database.password,
   database: config.database.database
 });
-con.connect(function(err){
-  if (err) {
-    console.log('connecting error');
-    return;
-  }
-  console.log('connecting success');
-});
+
+if (config.database.connect) {
+  con.connect(function(err){
+    if (err) {
+      console.log('connecting error');
+      return;
+    }
+    console.log('connecting success');
+  });
+} else {
+  con = null;
+  console.log('Not connecting to database.');
+}
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

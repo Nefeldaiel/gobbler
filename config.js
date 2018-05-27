@@ -1,6 +1,7 @@
 var config = {
     dev: {
         database: {
+            connect: false,
             host: '',
             user: '',
             password: '',
